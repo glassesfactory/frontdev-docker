@@ -7,7 +7,8 @@ gulp.task 'koa', ->
   nodemon
     script: './api/koa.js'
     nodeArgs: ['--harmony']
-  .on 'error', gutil.log
+  .on 'error', ->
+    console.log "あれ?"
   .on 'restart', ->
     console.log "restart server"
     return
