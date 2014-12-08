@@ -32,6 +32,7 @@ gulp.task 'coffee', ->
 
 #クライアント用(ウォッチする)
 gulp.task 'coffee:watch', ->
+  console.log "ここですかもしや"
   gulp.src './src/coffee/*.coffee'
   .pipe watch './src/coffee/*.coffee'
   .pipe plumber gutil.log
@@ -40,6 +41,7 @@ gulp.task 'coffee:watch', ->
 
 #サーバー用
 gulp.task 'server-coffee:watch', ->
+  console.log "ここですかもしや?"
   gulp.src './api/*.coffee'
   .pipe watch './api/*.coffee'
   .pipe plumber gutil.log
