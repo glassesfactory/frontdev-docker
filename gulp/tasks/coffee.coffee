@@ -8,7 +8,7 @@ exec = require('child_process').exec
 
 #うーん
 coffee = (opt) ->
-  console.log "uooooo"
+  # TODO このままだと child_process まわりでコケてるので明日何とかする
   return
   # return through.obj (file, enc, cb) ->
   #   console.log file.path
