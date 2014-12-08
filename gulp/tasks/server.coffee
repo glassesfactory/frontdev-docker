@@ -7,7 +7,7 @@ gulp.task 'koa', ->
   nodemon
     script: './api/koa.js'
     nodeArgs: ['--harmony']
-    delay: 5
+    debug: true
   .on 'error', ->
     console.log "あれ?"
   .on 'change', ->
@@ -20,4 +20,4 @@ gulp.task 'koa', ->
 gulp.task 'server', ->
   gulp.start 'coffee:watch'
   gulp.start 'server-coffee:watch'
-  gulp.start 'koa'
+  # gulp.start 'koa'
