@@ -32,21 +32,21 @@ gulp.task 'coffee', ->
 
 #クライアント用(ウォッチする)
 gulp.task 'coffee:watch', ->
-  console.log "ここですかもしや"
-  gulp.src './src/coffee/*.coffee'
-  .pipe watch './src/coffee/*.coffee'
-  .pipe plumber gutil.log
-  .pipe coffee '--compile --bare --nodejs --harmony'
-  .pipe gulp.dest './dist/assets/javascripts/'
+  gulp.watch './src/coffee/*.coffee', ['coffee']
+  # gulp.src './src/coffee/*.coffee'
+  # .pipe watch './src/coffee/*.coffee'
+  # .pipe plumber gutil.log
+  # .pipe coffee '--compile --bare --nodejs --harmony'
+  # .pipe gulp.dest './dist/assets/javascripts/'
 
 #サーバー用
 gulp.task 'server-coffee:watch', ->
-  console.log "ここですかもしや?"
-  gulp.src './api/*.coffee'
-  .pipe watch './api/*.coffee'
-  .pipe plumber gutil.log
-  .pipe coffee '--compile --bare --nodejs --harmony'
-  .pipe gulp.dest './api/'
+  gulp.watch './api/*.coffee', ['server-coffee']
+  # gulp.src './api/*.coffee'
+  # # .pipe watch './api/*.coffee'
+  # .pipe plumber gutil.log
+  # .pipe coffee '--compile --bare --nodejs --harmony'
+  # .pipe gulp.dest './api/'
 
 # うぉっちしない
 gulp.task 'server-coffee', ->
