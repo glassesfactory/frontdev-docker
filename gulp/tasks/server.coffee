@@ -9,6 +9,8 @@ gulp.task 'koa', ->
     nodeArgs: ['--harmony']
   .on 'error', ->
     console.log "あれ?"
+  .on 'change', ->
+    console.log "pya-"
   .on 'restart', ->
     console.log "restart server"
     return
