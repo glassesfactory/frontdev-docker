@@ -22,22 +22,17 @@ gulp.task 'koa', ->
     return
 
 
-
-
-
-
-
 gulp.task 'server', ->
   nodemon
-    script: './src'
+    script: './src/api/koa.js'
     # env: PORT:3000
     ignore: ['node_modules', './src/api/*.js', 'dist']
     nodeArgs: ['--harmony']
     ext: 'coffee jade'
-  # .on 'start', ['coffee', 'server-coffee', 'koa']
+  .on 'start', ['koa']
   .on 'error', ->
     console.log "あれ?"
-  .on 'change', ['coffee', 'server-coffee', 'koa']
+  .on 'change', ['koa']
   .on 'restart', ->
     console.log "restart server"
     return
