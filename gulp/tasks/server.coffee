@@ -9,10 +9,10 @@ gulp.task 'koa', ->
     nodeArgs: ['--harmony']
     debug: true
     delay: 10
-  .on 'start', ['coffee:watch', 'server-coffee:watch']
+  # .on 'start', ['coffee:watch', 'server-coffee:watch']
   .on 'error', ->
     console.log "あれ?"
-  .on 'change', ['coffee:watch', 'server-coffee:watch']
+  # .on 'change', ['coffee:watch', 'server-coffee:watch']
   .on 'restart', ->
     console.log "restart server"
     return
