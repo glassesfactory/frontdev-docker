@@ -3,22 +3,17 @@ nodemon = require 'gulp-nodemon'
 gutil = require 'gulp-util'
 
 
-gulp.task 'koa', ->
+
+gulp.task 'server', ->
   nodemon
     script: './api/koa.js'
+    ignore: ['node_modules', './api/*.js', 'dist']
     nodeArgs: ['--harmony']
-    debug: true
-    delay: 10
-  # .on 'start', ['coffee:watch', 'server-coffee:watch']
+    ext: 'coffee jade'
+  .on 'start', ['coffee', 'server-coffee']
   .on 'error', ->
     console.log "あれ?"
-  # .on 'change', ['coffee:watch', 'server-coffee:watch']
+  .on 'change', ['coffee', 'server-coffee']
   .on 'restart', ->
     console.log "restart server"
     return
-
-
-gulp.task 'server', ->
-  gulp.start 'coffee:watch'
-  gulp.start 'server-coffee:watch'
-  gulp.start 'koa'
