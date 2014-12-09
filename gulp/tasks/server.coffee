@@ -19,4 +19,6 @@ gulp.task 'koa', ->
 
 
 gulp.task 'server', ->
+  gulp.start 'coffee:watch'
+  gulp.start 'server-coffee:watch'
   gulp.start 'koa'
