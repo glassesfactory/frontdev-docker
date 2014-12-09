@@ -8,10 +8,11 @@ serve = require 'koa-static'
 parse = require 'co-body'
 views = require 'co-views'
 
-render = views path.resolve(__dirname, '..') + '/src/jade', {map:{html:'jade'}}
+render = views path.resolve(__dirname, '..') + '/jade', {map:{html:'jade'}}
 
 app = koa()
-port = process.env.PORT || 3000
+# port = process.env.PORT || 3000
+port = 3000
 
 app.use logger()
 
@@ -26,7 +27,7 @@ show = (id)->
 
 app.use route.get('/', list)
 app.use route.get('/:id', show)
-app.use serve path.resolve(__dirname, '..') + '/dist'
+app.use serve path.resolve(__dirname, '../../') + '/dist'
 
 app.listen port
 # module.exports = app

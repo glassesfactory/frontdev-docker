@@ -28,18 +28,18 @@ gulp.task 'coffee:watch', ->
 
 #サーバー用
 gulp.task 'server-coffee:watch', ->
-  gulp.src './api/*.coffee'
-  .pipe watch './api/*.coffee'
+  gulp.src './src/api/*.coffee'
+  .pipe watch './src/api/*.coffee'
   .pipe coffee
     bare: true
     harmony: true
-  .pipe gulp.dest './api/'
+  .pipe gulp.dest './src/api/'
 
 # うぉっちしない
 gulp.task 'server-coffee', ->
-  gulp.src './api/*.coffee'
+  gulp.src './src/api/*.coffee'
   .pipe plumber gutil.log
   .pipe coffee
     bare: true
     harmony: true
-  .pipe gulp.dest './api/'
+  .pipe gulp.dest './src/api/'
