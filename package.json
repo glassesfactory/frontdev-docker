@@ -25,7 +25,9 @@
     "koa-logger": "~1.2.2",
     "koa-route": "~2.4.0",
     "koa-static": "^1.4.7",
-    "through2": "^0.6.3"
+    "merge": "^1.2.0",
+    "through2": "^0.6.3",
+    "vinyl-sourcemaps-apply": "^0.1.4"
   },
   "dependencies": {
     "require-dir": "^0.1.0"
