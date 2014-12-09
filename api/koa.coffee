@@ -11,6 +11,7 @@ views = require 'co-views'
 render = views path.resolve(__dirname, '..') + '/src/jade', {map:{html:'jade'}}
 
 app = koa()
+port = process.env.PORT || 3000
 
 app.use logger()
 
@@ -27,4 +28,4 @@ app.use route.get('/', list)
 app.use route.get('/:id', show)
 app.use serve path.resolve(__dirname, '..') + '/dist'
 
-app.listen 3000
+app.listen port

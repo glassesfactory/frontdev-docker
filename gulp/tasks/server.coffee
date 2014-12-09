@@ -7,6 +7,7 @@ gutil = require 'gulp-util'
 gulp.task 'server', ->
   nodemon
     script: './api/koa.js'
+    env: PORT:3000
     ignore: ['node_modules', './api/*.js', 'dist']
     nodeArgs: ['--harmony']
     ext: 'coffee jade'
