@@ -21,7 +21,7 @@ genNodeMan = ->
 
 
 #クライアント用(ウォッチする)
-gulp.task 'coffee:watch', ->
+gulp.task 'server', ->
   nodemon = genNodeMan()
   gulp.src './src/coffee/*.coffee'
   .pipe watch './src/coffee/*.coffee', ->
