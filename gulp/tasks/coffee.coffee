@@ -16,15 +16,15 @@ gulp.task 'coffee', ->
     harmony: true
   .pipe gulp.dest './dist/assets/javascripts/'
 
-#クライアント用(ウォッチする)
-gulp.task 'coffee:watch', ->
-  gulp.src './src/coffee/*.coffee'
-  .pipe watch './src/coffee/*.coffee'
-  .pipe plumber gutil.log
-  .pipe coffee
-    bare:true
-    harmony: true
-  .pipe gulp.dest './dist/assets/javascripts/'
+# #クライアント用(ウォッチする)
+# gulp.task 'coffee:watch', ->
+#   gulp.src './src/coffee/*.coffee'
+#   .pipe watch './src/coffee/*.coffee'
+#   .pipe plumber gutil.log
+#   .pipe coffee
+#     bare:true
+#     harmony: true
+#   .pipe gulp.dest './dist/assets/javascripts/'
 
 #サーバー用
 gulp.task 'server-coffee:watch', ->
