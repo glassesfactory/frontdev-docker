@@ -29,3 +29,4 @@ app.use route.get('/:id', show)
 app.use serve path.resolve(__dirname, '..') + '/dist'
 
 app.listen port
+# module.exports = app
